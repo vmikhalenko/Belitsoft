@@ -1,0 +1,19 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import time
+
+driver=webdriver.Edge('C:/Users/User/PycharmProjects/pythonProject/venv/msedgedriver')
+driver.get("https://www.metric-conversions.org")
+driver.find_element_by_link_text("Fahrenheit to Celsius").click()
+time.sleep(1)
+driver.find_element_by_id("argumentConv").send_keys(32)
+driver.back()
+driver.find_element_by_link_text("Meters to Feet").click()
+time.sleep(1)
+driver.find_element_by_id("argumentConv").send_keys(10)
+driver.back()
+driver.find_element_by_link_text("Weight").click()
+driver.find_element_by_link_text("Ounces to Grams").click()
+time.sleep(1)
+driver.find_element_by_id("argumentConv").send_keys(15)
+driver.quit()
